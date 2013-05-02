@@ -380,6 +380,11 @@ module Git
       self.lib.tag(tag_name)
       tag(tag_name)
     end
+
+    # deletes a local tag
+    def delete_local_tag(tag_name)
+        self.lib.tag(tag_name,:delete => true)
+    end
     
     # creates an archive file of the given tree-ish
     def archive(treeish, file = nil, opts = {})

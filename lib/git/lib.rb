@@ -528,8 +528,11 @@ module Git
       command_lines('tag')
     end
 
-    def tag(tag)
-      command('tag', tag)
+    def tag(tag , opts)
+      arr_opts = []
+      arr_opts << '-d' if opts[:delete]
+      arr_opts << tag
+      command('tag', arr_opts)
     end
 
     
