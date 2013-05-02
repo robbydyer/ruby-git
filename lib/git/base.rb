@@ -381,9 +381,14 @@ module Git
       tag(tag_name)
     end
 
-    # deletes a local tag
+    # deletes a local tag (Name)
     def delete_local_tag(tag_name)
         self.lib.tag(tag_name,:delete => true)
+    end
+
+    # deletes a local tag (Object)
+    def delete_local_tag(tag)
+        self.lib.tag(tag.name,:delete => true)
     end
     
     # creates an archive file of the given tree-ish
