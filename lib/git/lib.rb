@@ -533,8 +533,11 @@ module Git
     end
 
     
-    def fetch(remote)
-      command('fetch', remote)
+    def fetch(remote , opts = {})
+      arr_opts = []
+      arr_opts << '-t' if opts[:tags]
+      arr_opts << remote
+      command('fetch',  arr_opts)
     end
     
     def push(remote, branch = 'master', tags = false)
