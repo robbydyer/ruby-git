@@ -383,14 +383,10 @@ module Git
 
     # deletes a local tag (Name)
     def delete_local_tag(tag_name)
+        tag_name = tag_name.name if tag_name.is_a ? Tag
         self.lib.tag(tag_name,:delete => true)
     end
 
-    # deletes a local tag (Object)
-    def delete_local_tag(tag)
-        self.lib.tag(tag.name,:delete => true)
-    end
-    
     # creates an archive file of the given tree-ish
     def archive(treeish, file = nil, opts = {})
       self.object(treeish).archive(file, opts)
