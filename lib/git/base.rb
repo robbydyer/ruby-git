@@ -383,7 +383,7 @@ module Git
 
     # deletes a local tag (Name)
     def delete_local_tag(tag_name)
-        tag_name = tag_name.name if tag_name.is_a ? Tag
+        tag_name = tag_name.name if tag_name.is_a? Tag
         self.lib.tag(tag_name,:delete => true)
     end
 
